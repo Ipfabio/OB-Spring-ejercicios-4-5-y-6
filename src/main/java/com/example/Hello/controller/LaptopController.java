@@ -26,6 +26,7 @@ public class LaptopController {
         return laptopRepository.findAll();
     }
 
+    // Busqueda por id
     @GetMapping("/api/laptops/{id}")
     public ResponseEntity<Laptop> findOneById(@PathVariable Long id){
         Optional<Laptop> laptopOpt = laptopRepository.findById(id);
@@ -35,6 +36,8 @@ public class LaptopController {
             return ResponseEntity.notFound().build();
     }
 
+
+    // Crear por pedido Post
     @PostMapping("/api/laptops")
     public Laptop create(@RequestBody Laptop laptop){
         return laptopRepository.save(laptop);

@@ -17,9 +17,10 @@ public class HelloApplication {
 		Laptop laptop1 = new Laptop(null,"HP",130.400);
 		Laptop laptop2 = new Laptop(null,"eNova",100.000);
 
-		// almacenar
+		// muestra el stock antes de guardarlas
 		System.out.println("Laptop disponible: " + repository.findAll().size());
 
+		// almacenar
 		repository.save(laptop1);
 		repository.save(laptop2);
 
